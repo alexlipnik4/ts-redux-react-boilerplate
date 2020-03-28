@@ -9,6 +9,6 @@ const App = (props: any) => (
     <TodoList />
     <Footer />
   </div>
-)
+) 
 
 export default App

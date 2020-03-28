@@ -4,7 +4,7 @@ import {ITodo} from '../../common/redux/reducers/todos';
 
 type Props = {
   todos: ITodo[],
-  toggleTodo?: (id: number) => void
+  toggleTodo: (id: number) => void
 }
 
 const TodoList = (props: Props) => (

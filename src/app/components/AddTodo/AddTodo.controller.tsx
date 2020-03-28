@@ -3,7 +3,7 @@ import AddTodo from './AddTodo';
 import { connect } from 'react-redux'
 import { addTodo } from '../../common/redux/actions'
 
-const AddTodoController = (props) => {
+const AddTodoController = (props: any) => {
     const [inputValue, changeInputValue] = React.useState('');
 
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -15,7 +15,7 @@ const AddTodoController = (props) => {
         changeInputValue('');
     }
     
-    const onChange = (value) => {
+    const onChange = (value: string) => {
         changeInputValue(value)
     }
 
