@@ -1,5 +1,5 @@
 export default {
-    login: user => {
+    login: (user: any) => {
         return fetch('/user/login', {
             method: 'post',
             body: JSON.stringify(user),
@@ -8,7 +8,7 @@ export default {
             }
         }).then(res => res.json()).then(data => data)
     },
-    register: user => {
+    register: (user: any) => {
         return fetch('/user/register', {
             method: 'post',
             body: JSON.stringify(user),

@@ -1,11 +1,11 @@
 import React, {useState, useContext, useRef, useEffect} from 'react';
-import AuthService from '../common/services/AuthService';
-import Message from '../components/Message';
+import AuthService from '../../common/services/AuthService';
+import Message from '../Message';
 
-const Register = props => {
+const Register = (props: any) => {
     const [user, setUser] = useState({username: "", password: "", role: ""});
     const [message, setMessage] = useState(null);
-    let timeID = useRef(null);
+    let timeID: any = useRef(null);
 
     useEffect(() => {
         return () => {
@@ -13,11 +13,11 @@ const Register = props => {
         }
     }, [])
 
-    const onChange = e => {
+    const onChange = (e: any) => {
         setUser({...user, [e.target.name] : e.target.value})
     }
 
-    const onSubmit = e => {
+    const onSubmit = (e: any) => {
         e.preventDefault();
         AuthService.register(user).then(data => {
             const {message} = data;

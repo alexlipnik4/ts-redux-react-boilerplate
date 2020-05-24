@@ -1,6 +1,6 @@
 import React from 'react';
 
-const getStyle = props => {
+const getStyle = (props: any) => {
     let baseClass = "alert";
     if(props.message.msgError){
         baseClass = baseClass + " alert-danger";
@@ -11,7 +11,7 @@ const getStyle = props => {
     return baseClass + " text-center"
 }
 
-const Message = props => {
+const Message = (props: any) => {
     return (
         <div className={getStyle(props)} role="alert">
             {props.message.msgBody}

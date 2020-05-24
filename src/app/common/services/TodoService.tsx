@@ -9,7 +9,7 @@ export default {
             }
         })
     },
-    postTodo : (todo) => {
+    postTodo : (todo: any) => {
         return fetch('/user/todo', {
             method: "post",
             body: JSON.stringify(todo),

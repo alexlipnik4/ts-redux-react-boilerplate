@@ -1,13 +1,14 @@
 import React, {useContext} from 'react';
 import { AuthContext } from './common/context/AuthContext';
 
-import Home from './components/Home';
+import Home from './components/pages/Home';
+import Login from './components/pages/Login';
+import Register from './components/pages/Register';
+import Admin from './components/pages/Admin';
+
 import NavBar from './components/Navbar';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
 import Todos from './components/Todos';
-import Admin from './components/Admin';
 import PrivateRoute from './common/hocs/PrivateRoute';
 import UnPrivateRoute from './common/hocs/UnPrivateRoute';
 

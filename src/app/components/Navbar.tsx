@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import AuthService from '../common/services/AuthService';
 import { AuthContext } from '../common/context/AuthContext';
 
-const Navbar = props => {
+const Navbar = (props: any) => {
     const {isAuthenticated, user, setIsAuthenticated, setUser} = useContext(AuthContext);
 
     const unauthenticatedNavBar = () => {

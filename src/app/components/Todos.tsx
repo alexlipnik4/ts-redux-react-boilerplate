@@ -4,11 +4,11 @@ import TodoItem from './TodoItem';
 import TodoService from '../common/services/TodoService';
 import { AuthContext } from '../common/context/AuthContext';
 
-const Todo = props => {
+const Todo = (props: any) => {
     const [todo, setTodo] = useState({name: ""});
     const [todos, setTodos] = useState([]);
     const [message, setMessage] = useState(null);
-    const authContext = useContext(AuthContext);
+    const authContext: any = useContext(AuthContext);
 
     useEffect(() => {
         TodoService.getTodos().then(data => {
@@ -16,7 +16,7 @@ const Todo = props => {
         })
     },[])
 
-    const onSubmit = e => {
+    const onSubmit = (e: any) => {
         e.preventDefault();
         TodoService.postTodo(todo).then(data => {
             const {message} = data;
@@ -39,7 +39,7 @@ const Todo = props => {
         })
     } 
 
-    const onChange = e => {
+    const onChange = (e: any) => {
         setTodo({name: e.target.value});
     }
 
@@ -51,7 +51,7 @@ const Todo = props => {
         <div>
             <ul className="list-group">
                 {
-                    todos.map(todo => (
+                    todos.map((todo: any) => (
                         <TodoItem key={todo._id} todo={todo} />
                     ))
                 }

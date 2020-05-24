@@ -1,19 +1,18 @@
 import React, {useState, useContext} from 'react';
-import AuthService from '../common/services/AuthService';
-import Message from '../components/Message';
-import {AuthContext} from '../common/context/AuthContext';
+import AuthService from '../../common/services/AuthService';
+import Message from '../Message';
+import {AuthContext} from '../../common/context/AuthContext';
 
-const Login = props => {
+const Login = (props: any) => {
     const [user, setUser] = useState({username: "", password: ""});
     const [message, setMessage] = useState(null);
-    const authContext = useContext(AuthContext);
+    const authContext: any = useContext(AuthContext);
 
-    const onChange = e => {
+    const onChange = (e: any) => {
         setUser({...user, [e.target.name] : e.target.value})
-        console.log(user)
     }
 
-    const onSubmit = e => {
+    const onSubmit = (e: any) => {
         e.preventDefault();
         AuthService.login(user).then(data => {
             const { isAuthenticated, user, message } = data;
