@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { setVisibilityFilter } from '../../common/redux/actions'
+import { setVisibilityFilter } from '../../../common/redux/actions'
 import Link from './Link'
 
 const mapStateToProps = (state: any, ownProps: any) => ({

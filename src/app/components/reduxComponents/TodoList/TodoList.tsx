@@ -1,6 +1,6 @@
 import React from 'react'
 import Todo from '../Todo/Todo'
-import {ITodo} from '../../common/redux/reducers/todos';
+import {ITodo} from '../../../common/redux/reducers/todos';
 
 type Props = {
   todos: ITodo[],

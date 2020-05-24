@@ -1,7 +1,7 @@
 import React, { FormEvent } from 'react';
 import AddTodo from './AddTodo';
 import { connect } from 'react-redux'
-import { addTodo } from '../../common/redux/actions'
+import { addTodo } from '../../../common/redux/actions'
 
 const AddTodoController = (props: any) => {
     const [inputValue, changeInputValue] = React.useState('');
