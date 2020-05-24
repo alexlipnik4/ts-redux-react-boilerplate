@@ -1,28 +1,31 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
-import AuthService from '../common/services/AuthService';
-import { AuthContext } from '../common/context/AuthContext';
+import AuthService from '../../common/services/AuthService';
+import { AuthContext } from '../../common/context/AuthContext';
+import {TabBar, Tab, Button} from 'rmwc';
 
-const Navbar = (props: any) => {
+import './Navbar.scss';
+
+const Navbar = () => {
     const {isAuthenticated, user, setIsAuthenticated, setUser} = useContext(AuthContext);
 
     const unauthenticatedNavBar = () => {
         return (
             <>
                 <Link to="/">
-                    <li className="nav-item nav-link">
+                    <Tab className="navbar__nav-link">
                         Home
-                    </li>
+                    </Tab>
                 </Link>
                 <Link to="/login">
-                    <li className="nav-item nav-link">
+                    <Tab className="navbar__nav-link">
                         Login
-                    </li>
+                    </Tab>
                 </Link>
                 <Link to="/register">
-                    <li className="nav-item nav-link">
+                    <Tab className="navbar__nav-link">
                         Register
-                    </li>
+                    </Tab>
                 </Link>
             </>
         )
@@ -32,26 +35,23 @@ const Navbar = (props: any) => {
         return (
             <>
                 <Link to="/">
-                    <li className="nav-item nav-link">
+                    <Tab className="navbar__nav-link">
                         Home
-                    </li>
+                    </Tab>
                 </Link>
                 <Link to="/todos">
-                    <li className="nav-item nav-link">
+                    <Tab className="navbar__nav-link">
                         Todos
-                    </li>
+                    </Tab>
                 </Link>
                 {
                     user.role === "admin" && 
                         <Link to="/admin">
-                            <li className="nav-item nav-link">
+                            <Tab className="navbar__nav-link">
                                 Admin
-                            </li>
+                            </Tab>
                         </Link>
                 }
-                <button type="button" className="btn btn-link nav-link" onClick={onClickLogOutHandler}>
-                    Logout
-                </button>
             </>
         )
     }
@@ -64,18 +64,21 @@ const Navbar = (props: any) => {
             }
         })
     }
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to="/" >
-                <div className="navbar-brand">
-                    NoobCoder
-                </div>
-            </Link>
-            <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
-                    { !isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
-                </ul>
-            </div>
+        <nav className="navbar">
+            <TabBar className="navbar__link-list">
+                { !isAuthenticated ? unauthenticatedNavBar() : authenticatedNavBar()}
+            </TabBar>
+            { isAuthenticated && 
+                <Button
+                    label="Logout"
+                    unelevated 
+                    type="button"
+                    className="navbar__button"
+                    onClick={onClickLogOutHandler} 
+                />
+            }
         </nav>
     )
 }
