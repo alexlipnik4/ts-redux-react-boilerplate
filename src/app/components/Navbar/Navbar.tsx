@@ -18,6 +18,7 @@ const Navbar = (props: {
             <TabBar activeTabIndex={props.activeTab} onActivate={props.onTabClick} className="navbar__link-list">
                 <TabRenderer />
             </TabBar>
+            
             { isAuthenticated && 
                 <Button
                     label="Logout"

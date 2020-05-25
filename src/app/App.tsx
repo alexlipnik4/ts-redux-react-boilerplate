@@ -18,7 +18,7 @@ function App() {
     <div className="app">
       <Router>
         <NavBar />
-          
+        
         <Route exact path="/" component={Home} />
         <UnPrivateRoute path="/login" component={Login} />
         <UnPrivateRoute path="/Register" component={Register} />

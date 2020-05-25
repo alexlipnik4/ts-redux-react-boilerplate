@@ -1,24 +1,9 @@
 import React from 'react';
 import { Typography, TextField, Button } from 'rmwc';
 import Message from '../Message';
+import { IForm } from './Form.model';
 
 import './Form.scss'
-
-interface IFormRow {
-    label: string,
-    inputType: string,
-    name: string,
-    placeHolder: string,
-}
-
-interface IForm {
-    title: string,
-    rows: IFormRow[],
-    onChange: (event: React.FormEvent<HTMLInputElement>) => void,
-    onSubmit: (event: React.FormEvent<HTMLFormElement>) => void,
-    message: string | null,
-    buttonText: string
-}
 
 const Form = (props: IForm) => (
     <form className="form" onSubmit={props.onSubmit}>

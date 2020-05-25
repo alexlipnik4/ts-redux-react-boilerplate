@@ -4,7 +4,7 @@ import TodoItem from './TodoItem';
 import TodoService from '../common/services/TodoService';
 import { AuthContext } from '../common/context/AuthContext';
 
-const Todo = (props: any) => {
+const Todo = () => {
     const [todo, setTodo] = useState({name: ""});
     const [todos, setTodos] = useState([]);
     const [message, setMessage] = useState(null);
