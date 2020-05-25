@@ -1,11 +1,11 @@
 import React, {useContext} from 'react';
 
 import Home from './components/pages/Home';
-import Login from './components/pages/Login';
-import Register from './components/pages/Register';
+import Login from './components/pages/Login/Login.controller';
+import Register from './components/pages/Register/Register.controller';
 import Admin from './components/pages/Admin';
 
-import NavBar from './components/Navbar/Navbar';
+import NavBar from './components/Navbar/Navbar.controller';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Todos from './components/Todos';
 import PrivateRoute from './common/hocs/PrivateRoute';
